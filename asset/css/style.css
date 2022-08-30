@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+/*====== GLOBAL ROOT ======*/
+:root {
+    --bs-background: rgba(131, 183, 53, 1);
+    --bs-gray: #777;
+    --bs-gray-text: #848484;
+    --white: #ffffff;
+    --dark: #000000;
+    --bs-transition: 300ms cubic-bezier(.38, 1.02, .88, .97);
+    --bs-transition-delay: 300ms 100ms cubic-bezier(.38, 1.02, .88, .97);
+    --bs-form-border: rgba(0, 0, 0, .1);
+    --color-gray-200: rgba(0, 0, 0, .075);
+}
+
+* {
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.btn-bs {
+    color: #ffffff;
+    background-color: var(--bs-background);
+}
+
+.text-xl {
+    font-size: 1.4rem;
+}
+
+.text-lg {
+    font-size: 1.2rem;
+}
+
+.text-md {
+    font-size: 1rem;
+}
+
+.text-sm {
+    font-size: 0.85rem;
+}
+
+.text-xs {
+    font-size: .75rem;
+}
+
+.text-bs {
+    color: var(--bs-gray-text);
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+.position-realitive {
+    position: relative;
+}
+
+.position-unset {
+    position: unset;
+}
+
+.border-gray-200 {
+    border: 1px solid var(--color-gray-200);
+}
+
+/*===== MAIN START ======*/
+.top-info {
+    background-color: var(--bs-background);
+}
+
+header form {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    font-size: 1.2rem;
+    color: var(--bs-gray);
+}
+
+.logo {
+    max-width: 300px;
+}
+
+
+.form-group input {
+    border-radius: 0;
+    border: 2px solid var(--bs-form-border) !important;
+}
+
+/* MAIN MENU */
+.main-menu .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(200px);
+    width: 100%;
+    border: none;
+    display: flex;
+    position: absolute;
+    left: 0 !important;
+    list-style: none;
+    transition: var(--bs-transition);
+}
+
+.menu-grid {
+    display: grid !important;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+}
+
+.main-menu .dropdown-menu.show {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 46px) !important;
+}
+
+.main-menu .dropdown-menu li {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.main-menu .dropdown-menu img {
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+}
+
+.container.menu a {
+    position: relative;
+    display: inline-block;
+}
+
+.container.menu .title {
+    display: inline-block;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(20px, -16px);
+}
+
+.menu-blog {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 300px;
+}
+
+.aside-menu {
+    position: absolute;
+    width: calc(100% - 1.5rem);
+}
+
+.aside-menu button {
+    color: #414141;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.aside-menu .fa-angle-right {
+    position: absolute;
+    right: 1rem;
+    opacity: .4;
+    font-size: .75rem;
+}
+
+.aside-menu ul {
+    transform: unset !important;
+    left: 302px !important;
+    width: 862px;
+}
+
+
+.aside-row a{
+    display: block;
+    font-size: .75rem;
+    color: var(--dark);
+    font-weight: bold;
+    opacity: .5;
+    padding: .7rem 0;
+    transition: var(--bs-transition);
+}
+
+.aside-row a:hover{
+    color: var(--bs-background);
+}
+
+.aside-firma img{
+    transition: var(--bs-transition);
+    filter: grayscale(100%);
+    opacity: .6;
+}
+
+.aside-firma img:hover{
+    filter: grayscale(0);
+    opacity:1;
+}
+
+/* BASKET CARD*/
+.basket-card {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    min-width: 400px;
+    opacity: 0;
+    visibility: visible;
+    background-color: #00000066;
+    transition: var(--bs-transition);
+    z-index: -1;
+}
+
+.basket-card .card {
+    position: relative;
+    transform: translateX(100%);
+    background-color: var(--white);
+    max-width: 380px;
+    transition: var(--bs-transition-delay);
+}
+
+.basket-card.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 99999;
+    transition: var(--bs-transition-delay);
+}
+
+.basket-card.active .card {
+    visibility: visible;
+    transform: translateX(0);
+    transition: var(--bs-transition);
+}
+
+.basket-card .fa-store-slash {
+    font-size: 90px;
+    opacity: .4;
+}
